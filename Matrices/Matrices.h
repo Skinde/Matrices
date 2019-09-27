@@ -11,8 +11,9 @@ using palabra = std::string;
 using funcion = doble_puntero;
 using funcion_vacia = void;
 
-class variables
+class funciones
 {
+	public:
 	funcion crear_arreglo(numero filas, numero columnas)
 	{
 		doble_puntero lista_dinamica = new puntero[filas];
