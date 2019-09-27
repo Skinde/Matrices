@@ -1,12 +1,9 @@
-﻿// Matrices.cpp: define el punto de entrada de la aplicación.
-//
+﻿#include "Matrices.h"
+#include "Head.h"
 
-#include "Matrices.h"
-
-using namespace std;
 
 int main()
 {
-	cout << "Hola CMake." << endl;
+	
 	return 0;
 }
