@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <iostream>
 #include <string.h>
@@ -19,7 +19,7 @@ class funciones
 		doble_puntero lista_dinamica = new puntero[filas];
 		for (numero i = 0; i < filas; i++)
 		{
-			lista_dinamica[i] = new int[columnas];
+			lista_dinamica[i] = new int[columnas] ();
 		}
 		return lista_dinamica;
 	}
@@ -31,18 +31,39 @@ class funciones
 	}
 	funcion_vacia swap_columnas(puntero x, puntero y, numero x_tamano)
 	{
-		for (numero i; i < x_tamano; i++)
+		for (numero i = 0; i < x_tamano; i++)
 		{
 			swap(*(x + i), *(y + i));
 		}
 	}
 	funcion_vacia swap_filas_matriz(doble_puntero x, numero filas_tamano, numero columnas_tamano)
 	{
-		for (numero i = filas_tamano; i > 0; i -= 1)
+		for (numero i = 0; i < filas_tamano - 1; i++)
 		{
-			swap_columnas(*(x + i), *(x + i - 1), columnas_tamano);
+			swap_columnas(*(x + i), *(x + i + 1), columnas_tamano);
 		}
 	}
-
+	funcion_vacia cout_matriz(doble_puntero matriz, numero filas, numero columnas)
+	{
+		for (numero x = 0; x < filas; x++)
+		{
+			for (numero y = 0; y < columnas; y++)
+			{
+				std::cout << matriz[x][y] << " ";
+			}
+			std::cout << std::endl;
+		}
+	}
+	funcion_vacia llenar_de_valores(doble_puntero matriz, numero filas, numero columnas)
+	{
+		for (numero x = 0; x < filas; x++)
+		{
+			for (numero y = 0; y < columnas; y++)
+			{
+				matriz[x][y] = x;
+			}
+			std::cout << std::endl;
+		}
+	}
 
 };
